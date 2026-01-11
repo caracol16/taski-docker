@@ -10,7 +10,8 @@ SECRET_KEY = os.getenv(
 )
 
 DEBUG = (
-    os.getenv('DEBUG', 'True').strip().lower() in {'1', 'true', 'yes', 'y', 'on'}
+    os.getenv('DEBUG', 'True').strip().lower() in {
+        '1', 'true', 'yes', 'y', 'on'}
 )
 
 _allowed_hosts_env = os.getenv('DJANGO_ALLOWED_HOSTS', '').strip()
@@ -134,7 +135,8 @@ STATIC_URL = '/static/'
 
 # Для docker-окружения используем общий volume (см. docker-compose),
 # но оставляем дефолт для запуска без Docker.
-STATIC_ROOT = Path(os.getenv('STATIC_ROOT', str(BASE_DIR / 'collected_static')))
+STATIC_ROOT = Path(
+    os.getenv('STATIC_ROOT', str(BASE_DIR / 'collected_static')))
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
